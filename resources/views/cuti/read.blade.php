@@ -30,6 +30,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('karyawans.index') }}">Karyawan</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('actionlogout') }}">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>
