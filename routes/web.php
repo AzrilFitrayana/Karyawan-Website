@@ -1,9 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\KaryawanController;
+
+// route login/logout
+Route::controller(LoginController::class)->prefix('login')->group(function() {
+    Route::get('/', 'login')->name('login');
+    Route::post('/', 'actionlogin')->name('actionlogin');
+});
+
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
 
 //route jabatan
 Route::get('/', [JabatanController::class,'index'])->name('jabatan.read');
