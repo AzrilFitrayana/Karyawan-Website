@@ -1,21 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\GajiController;
+use App\Http\Controllers\TotalHadirController;
 
-// route login/logout
-Route::controller(LoginController::class)->prefix('login')->group(function() {
-    Route::get('/', 'login')->name('login');
-    Route::post('/', 'actionlogin')->name('actionlogin');
-});
+Route::get('/', function () {
+    return view('index');
+})->name('index');
 
-Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
-
+Route::get('/login', function () {
+    return 'login.blade.php';
+  });
 //route jabatan
-Route::get('/', [JabatanController::class,'index'])->name('jabatan.read');
+Route::get('/jabatans', [JabatanController::class,'index'])->name('jabatan.read');
 Route::get('/create', [JabatanController::class,'create'])->name('jabatan.create');
 Route::post('/create-proses', [JabatanController::class,'store'])->name('jabatan.createProses');
 Route::get('/edit/{id}', [JabatanController::class,'edit'])->name('jabatan.edit');
@@ -38,3 +40,13 @@ Route::post('/karyawans/create-proses', [KaryawanController::class,'store'])->na
 Route::get('/karyawans/edit/{id}', [KaryawanController::class,'edit'])->name('karyawans.edit');
 Route::put('/karyawans/edit-proses/{id}', [KaryawanController::class,'update'])->name('karyawans.update');
 Route::delete('/karyawans/delete/{id}', [KaryawanController::class,'destroy'])->name('karyawans.delete');
+Route::get('/login', [loginController::class,'index'])->name('login.login');
+
+// route absensi
+Route::get('/absensi', [AbsensiController::class,'index'])->name('absensi.read');
+
+// route gaji
+Route::get('/gaji', [GajiController::class,'index'])->name('gaji.read');
+
+// route totalhadir
+Route::get('/totalhadir', [TotalHadirController::class,'index'])->name('totalhadir.read');

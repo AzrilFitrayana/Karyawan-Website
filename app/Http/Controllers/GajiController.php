@@ -12,9 +12,12 @@ class GajiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+    
     {
-        //
+       
+        return view('gaji/read');
     }
+    
 
     /**
      * Show the form for creating a new resource.
