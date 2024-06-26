@@ -112,4 +112,22 @@ class AbsensiController extends Controller
         $absensis = Absensi::where('status_absen', 'alpha')->get();
         return view('absensi.absensiAlpha', compact('absensis'));
     }
+
+    public function searchAbsensi(Request $request)
+    {
+        $today = Carbon::today();
+
+        $karyawanBelumAbsen = Karyawan::whereDoesntHave('absensis', function ($query) use ($today) {
+            $query->whereDate('tanggal_absensi', $today);
+        });
+
+        if ($request->has('karyawan')) {
+            $karyawanBelumAbsen->where('name', 'like', $request->karyawan . '%');
+        }
+
+        $karyawanBelumAbsen = $karyawanBelumAbsen->get();
+        session(['karyawan' => $request->karyawan]);
+
+        return view('absensi.read', compact('karyawanBelumAbsen'));
+    }
 }

@@ -9,6 +9,16 @@
 
         <div class="card bg-secondary rounded mt-4">
             <div class="card-body">
+                <div class="col-4 d-flex align-items-center gap-3 mb-4">
+                    <form action="{{ route('absensi.search') }}" method="GET" class="d-flex w-100 gap-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-secondary" id="basic-addon1"><i class="bi bi-search"></i></span>
+                            <input type="text" name="karyawan" class="form-control" placeholder="Cari Karyawan">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cari</button>
+                    </form>
+                </div>
+
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
