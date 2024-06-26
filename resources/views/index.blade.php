@@ -81,7 +81,7 @@ active
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <!-- Sale & Revenue End -->
@@ -187,7 +187,7 @@ active
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
-                                </tr> 
+                                </tr>
                             @endforeach
 
                         </tbody>
@@ -214,6 +214,7 @@ active
     <!-- Recent Gaji End -->
 
     
+
 @endsection
 
 @section('script')

@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -65,7 +65,7 @@
 
 
 
-        
+
 
     // Worldwide Sales Chart
     var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
@@ -120,7 +120,7 @@
             responsive: true
         }
     });
-    
+
 
 
     // Single Line Chart
@@ -210,6 +210,6 @@
         }
     });
 
-    
+
 })(jQuery);
 

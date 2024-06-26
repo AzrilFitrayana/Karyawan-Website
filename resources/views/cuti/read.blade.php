@@ -11,7 +11,7 @@
         font-size: 0.8rem;
     }
 
-    
+
 </style>
 
 @endsection
@@ -29,37 +29,37 @@ active
                 <div class="col">
 
 
-                    <table class="table table-dark table-striped" id="table-cuti">
-                        <thead>
-                            <tr class="text-center">
-                                <th scope="col">No</th>
-                                <th scope="col">Nama Kariyawan</th>
-                                <th scope="col">Tanggal Mulai</th>
-                                <th scope="col">Tanggal Berakhir</th>
-                                <th scope="col">Keterangan</th>
-                                <th scope="col">Jenis Cuti</th>
-                                <th scope="col">Opsi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $items)
-                                <tr class="text-center">
-                                    <th scope="row">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</th>
-                                    <td>{{ optional($items->karyawan)->name }}</td>
-                                    <td>{{ $items->tanggal_mulai }}</td>
-                                    <td>{{ $items->tanggal_berakhir }}</td>
-                                    <td>{{ $items->keterangan }}</td>
-                                    <td>{{ $items->jenis_cuti }}</td>
-                                    <td class="opsi"><a href="{{ route('cuti.edit', ['id' => $items->id]) }}"
-                                            class="btn btn-warning"> Edit </a> | <form
-                                            action="{{ route('cuti.delete', ['id' => $items->id]) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr> 
-                            @endforeach
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Kariyawan</th>
+                <th scope="col">Tanggal Mulai</th>
+                <th scope="col">Tanggal Berakhir</th>
+                <th scope="col">Keterangan</th>
+                <th scope="col">Jenis Cuti</th>
+                <th scope="col">Opsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($data as $items )
+
+                <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td> Coming Soon </td>
+                {{-- <td>{{ $items->karyawans->name }}</td> --}}
+                <td>{{ $items->tanggal_mulai }}</td>
+                <td>{{ $items->tanggal_berakhir }}</td>
+                <td>{{ $items->keterangan }}</td>
+                <td>{{ $items->jenis_cuti }}</td>
+                <td><a href="{{ route('cuti.edit', ['id' => $items->id]) }}" class="btn btn-warning"> Edit </a> | <form action="{{ route('cuti.delete', ['id' => $items->id]) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                  </td>
+                </tr>
+                @endforeach
 
                         </tbody>
                     </table>
@@ -83,5 +83,9 @@ active
 
     </section>
 
-   
+
 @endsection
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
