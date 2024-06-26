@@ -29,7 +29,7 @@ active
                 <div class="col">
 
 
-        <table class="table">
+        <table class="table" id="table-cuti">
             <thead>
                 <tr>
                 <th scope="col">No</th>
@@ -46,13 +46,12 @@ active
 
                 <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td> Coming Soon </td>
-                {{-- <td>{{ $items->karyawans->name }}</td> --}}
+                <td>{{ optional($items->karyawan)->name }}</td>
                 <td>{{ $items->tanggal_mulai }}</td>
                 <td>{{ $items->tanggal_berakhir }}</td>
                 <td>{{ $items->keterangan }}</td>
                 <td>{{ $items->jenis_cuti }}</td>
-                <td><a href="{{ route('cuti.edit', ['id' => $items->id]) }}" class="btn btn-warning"> Edit </a> | <form action="{{ route('cuti.delete', ['id' => $items->id]) }}" method="POST">
+                <td class="opsi" class="d-flex"><a href="{{ route('cuti.edit', ['id' => $items->id]) }}" class="btn btn-warning"> Edit </a> | <form action="{{ route('cuti.delete', ['id' => $items->id]) }}" method="POST" class="d-inline">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>
@@ -85,7 +84,3 @@ active
 
 
 @endsection
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-</html>
