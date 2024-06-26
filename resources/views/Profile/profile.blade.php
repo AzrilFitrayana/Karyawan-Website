@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Dasbord cuti</title>
+    <title>Profile</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,7 +46,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="Cuti.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Kehadiran</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Profile</h3>
                 </a>
                 
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -60,12 +60,12 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="Cuti.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Cuti</a>
-                    <a href="data_pegawai.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Data Pegawai</a>
-                    <a href="jabatan.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Jabatan</a>
-                    <a href="absensi_pegawai.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>absensi </a>
-                    <a href="tabel kehadiran.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Total Kehadiran</a>
-                    <a href="gaji_pegawai.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Gaji Pegawai</a>
+                    <a href="{{ route('cuti.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Cuti</a>
+                    <a href="{{ route('karyawans.index') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Data Pegawai</a>
+                    <a href="{{ route('jabatan.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Jabatan</a>
+                    <a href="{{ route('absensi.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>absensi </a>
+                    <a href="{{ route('totalhadir.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Total Kehadiran</a>
+                    <a href="{{ route('gaji.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Gaji Pegawai</a>
                    
                     </div>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="  " alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">NAMA YANG INGIN CUTI</span>
+                            <span class="d-none d-lg-inline-flex">NAMA KARYAWAN</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
@@ -130,51 +130,57 @@
 
             <!-- Table Cuti -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">TABLE CUTI</h6>
-                        <button type="button" class="btn btn-info  font-weight: bold; ">TAMBAH + </button>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col">No</th>
-                                    <th scope="col">Nama Karyawan</th>
-                                    <th scope="col">Tanggal Cuti</th>
-                                    <th scope="col">Tanggal Selesai</th>
-                                    <th scope="col">Status Cuti</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Rahmat</td>
-                                    <td>01 Jan 2045</td>
-                                    <td> 09 Jan 2045</td>
-                                    <td>Diterima</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info m-2">Detail</button>
-                                        <button type="button" class="btn btn-light m-2">Edit</button>
-                                        <button type="button" class="btn btn-primary m-2">Delete </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Rahmat</td>
-                                    <td>01 Jan 2045</td>
-                                    <td>09 Jan 2045</td>
-                                    <td>Ditolak</td>
-                                    <td>
-                                    <button type="button" class="btn btn-info m-2">Detail</button>
-                                    <button type="button" class="btn btn-light m-2">Edit</button>
-                                    <button type="button" class="btn btn-primary m-2">Delete </button>
-                                    </td>
-                                </tr>
-                              
-                            </tbody>
-                        </table>
+                
+                    
+                    <div class="container-fluid ">
+                        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                            <div class="col-30 col-sm-16 col-md-10 col-lg-15 col-xl-14">
+                                <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                       <!--  <a href="index.html" class="">-->
+                                            <h3 class="text-primary"><i class="fa fa-user-edit me-1 "></i>PROFILE</h3>
+                                        <!-- </a> -->
+                                    </div>
+            
+                                    <div class="col-sm-12 col-xl-12">
+                                        <div class="bg-secondary rounded h-100 p-4">
+                                            <div class="owl-carousel testimonial-carousel">
+                                                <div class="testimonial-item text-center">
+                                                    <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 200px; height: 200px;">
+                                                    <h5 class="mb-1">Client Name</h5>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-floating mb-3">
+                                        <input type="" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">NAMA ANDA</label>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input type="" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">JABATAN</label>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input type="" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Old Password</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">New Password</label>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">masukan gambar</label>
+                                            <input class="form-control bg-dark" type="file" id="formFile">
+                                        </div>
+                                         <!-- <a href="">Forgot Password</a>-->
+                                    </div>
+                                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">SIMPAN</button>
+                                    <p class="text-center mb-0">batalkan  ? <a href="">BACK</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -190,7 +196,7 @@
                             <div class="owl-carousel testimonial-carousel">
                                 <div class="testimonial-item text-center">
                                     <img class="img-fluid rounded-circle mx-auto mb-4" src=" " style="width: 100px; height: 100px;">
-                                    <h5 class="mb-1">Nama Karyawan yang ingin cuti</h5>
+                                    <h5 class="mb-1">Nama Karyawan </h5>
                                     <p>Profession</p>
                                     <p class="mb-0">portofolio singkat </p>
                                 </div>

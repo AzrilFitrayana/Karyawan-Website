@@ -8,6 +8,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\GajiController;
 use App\Http\Controllers\TotalHadirController;
+use App\Http\Controllers\profilController;
 
 Route::get('/', function () {
     return view('index');
@@ -50,3 +51,5 @@ Route::get('/gaji', [GajiController::class,'index'])->name('gaji.read');
 
 // route totalhadir
 Route::get('/totalhadir', [TotalHadirController::class,'index'])->name('totalhadir.read');
+// route profile
+Route::get('/Profile', [ProfilController::class,'index'])->name('Profile.profile');
