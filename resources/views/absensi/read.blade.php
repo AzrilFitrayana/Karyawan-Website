@@ -13,7 +13,7 @@
                     <form action="{{ route('absensi.search') }}" method="GET" class="d-flex w-100 gap-3">
                         <div class="input-group">
                             <span class="input-group-text bg-secondary" id="basic-addon1"><i class="bi bi-search"></i></span>
-                            <input type="text" name="karyawan" class="form-control" placeholder="Cari Karyawan">
+                            <input type="text" name="karyawan" class="form-control" placeholder="Cari Karyawan" value="{{ session('karyawan') }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Cari</button>
                     </form>
