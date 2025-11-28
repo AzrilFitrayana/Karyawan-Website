@@ -34,14 +34,15 @@ class Karyawan extends Model
     }
 
     // Relasi dengan Cuti
-    // public function cuties()
-    // {
-    //     return $this->hasMany(Cuti::class);
-    // }
+    public function cutis()
+    {
+        return $this->hasMany(Cuti::class, 'karyawan_id');
+    }
 
     // Relasi dengan Gaji
     public function gajies()
     {
         return $this->hasMany(Gaji::class);
     }
+
 }
