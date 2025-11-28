@@ -12,9 +12,8 @@ class JabatanController extends Controller
      */
     public function index()
     {
-        session()->forget('jabatan');
-        $data = Jabatan::all();
-        return view('jabatan/read', compact('data'));
+        
+        return view('jabatan/read');
     }
 
     /**

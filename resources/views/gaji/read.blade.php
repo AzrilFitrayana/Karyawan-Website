@@ -60,6 +60,8 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
+                <a href="{{ route('Profile.profile') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
+
                     <a href="{{ route('cuti.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Cuti</a>
                     <a href="{{ route('karyawans.index') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Data Pegawai</a>
                     <a href="{{ route('jabatan.read') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Jabatan</a>
