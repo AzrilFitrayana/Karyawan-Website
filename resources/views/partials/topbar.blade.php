@@ -74,8 +74,13 @@
         </div> --}}
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img class="rounded-circle me-lg-2" src="img/{{ session('user')->imgProfile }}" alt=""
-                    style="width: 40px; height: 40px;">
+                @if (session('user') && session('user')->imgProfile)
+                    <img class="rounded-circle me-lg-2" src="{{ asset('img/' . session('user')->imgProfile) }}" alt=""
+                        style="width: 40px; height: 40px;">
+                @else
+                    <img class="rounded-circle me-lg-2" src="{{ asset('img/user.jpg') }}" alt=""
+                        style="width: 40px; height: 40px;">
+                @endif
                 <span class="d-none d-lg-inline-flex">John Doe</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
